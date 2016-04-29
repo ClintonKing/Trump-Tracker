@@ -1,0 +1,19 @@
+
+extends ../../public/templates/base.jade
+
+block title
+	title Incidents
+
+block content
+	h1 Trump Rally Incidents
+	
+	if incidents.length > 0
+		for recipe in recipes
+				li
+					p
+						a(href="/incidents/#{incident.name}") #{incident.name}
+	else
+		p No data available.
+	
+	
+	a(href="/incidents/form") Report an Incident
