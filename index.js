@@ -8,15 +8,9 @@ var mongoose = require('mongoose');
 
 
 //connects to mongodb database
-mongoose.connect('mongodb://heroku_nhk71lrx:u80pspgarie7msj34ibhg4b6mf@ds011732.mlab.com:11732/heroku_nhk71lrx', function(error){
-	if (error){
-		console.log(error);
-	}
+db.connect('mongodb://heroku_nhk71lrx:u80pspgarie7msj34ibhg4b6mf@ds011732.mlab.com:11732/heroku_nhk71lrx', function(){
+	console.log("MongoDB connected...");
 });
-
-// db.connect('mongodb://localhost:27017/Rally', function(){
-// 	console.log("MongoDB connected...");
-// });
 
 //set parser to parse different data types
 app.use(bodyParser.json());
