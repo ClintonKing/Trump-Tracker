@@ -6,18 +6,10 @@ block title
 
 block content
 	script(src="/js/leaflet.js")
-//This page will conatain our map to list our rally incidents.
+		//This page will conatain our map to list our rally incidents.
 	div.container
 		div.row
 			div#map
-		//- div.row
-		//- 	if incidents.length > 0
-		//- 		for incident in incidents
-		//- 			a(href="/incidents/#{incident.name}")
-		//- 				div.col-md-3.incBlock(style="background-image: url('#{incident.img}');")
-		//- 					p.incText #{incident.type} at rally in #{incident.location} on #{incident.date}.
-		//- 	else
-		//- 		p.text-center No data available.
 		div.row
 			div.col-md-12
 				a(href="/incidents/form")#reporter.btn.btn-default Report an Incident
