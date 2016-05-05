@@ -1,5 +1,5 @@
 # Trump-Tracker
-An application to track incidents of harassment and violence at Trump rallies.
+An application to track incidents of harassment and violence at Trump rallies. This is a work in progress.
 
 I'm currently struggling to figure out why this won't deploy correctly on Heroku. In the mean time, if you'd like to try the application locally, here are the instructions:
 
