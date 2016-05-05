@@ -2,27 +2,23 @@
 extends ../../public/templates/base.jade
 
 block title
-  title #{incident.first} #{incident.last}
+  title #{incident.city}
   
 block content
   //This page displays a single incident and allows you to update it's information.
   div.row
     div.col-md-12
-      iframe(width="560" height="315" src="https://youtube.com/embed/#{incident.video}" frameborder="0" allowfullscreen)
-      p Protestor #{incident.first} #{incident.last} was removed from a Trump campaign rally in #{incident.location} on #{incident.date} after enduring #{incident.type} from Trump supporters.
+      iframe(width="560" height="315" src="https://youtube.com/embed/#{incident.video}" frameborder="0" allowfullscreen)#video
+      p.text-center #{incident.description}
   
   button(data-toggle="collapse" data-target="#form").btn.btn-default Update Information
   div#form.col-md-12.collapse
-    form(action="/incidents/#{incident.last}" method="POST")
-      p
-        label Victim Name
-        br
-        input(type="text" id="first" name="first" value="#{incident.first}" placeholder="First Name")
-        input(type="text" id="last" name="last" value="#{incident.last}" placeholder="Last Name")
+    form(action="/incidents/#{incident.city}" method="POST")
       p
         label Rally Location
         br
-        input(type="text" id="location" name="location" value="#{incident.location}" placeholder="City, ST")
+        input(type="text" id="city" name="city" value="#{incident.city}" placeholder="City")
+        input(type="text" id="state" name="state" value="#{incident.state}" placeholder="State")
         br
         input(type="text" id="lat" name="lat" value="#{incident.lat}" placeholder="Latitude")
         br
@@ -47,6 +43,6 @@ block content
         br
         input(type="text" value="#{incident.description}" name="description" id="description")
       p
-        a(href="/incidents/delete/#{incident.last}") Delete This Incident
+        a(href="/incidents/delete/#{incident.city}") Delete This Incident
       
       button.btn.btn-default Update Incident

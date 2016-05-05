@@ -9,14 +9,10 @@ block content
   h1 New Recipe
   form(action="/incidents" method="POST")
     p
-      label Victim Name
-      br
-      input(type="text" value="" name="first" placeholder="First Name")
-      input(type="text" value="" name="last" placeholder="Last Name")
-    p
       label Rally Location
       br
-      input(type="text" value="" name="location" placeholder="City, ST")
+      input(type="text" value="" name="city" placeholder="City")
+      input(type="text" value="" name="state" placeholder="State")
       br
       input(type="text" value="" name="lat" placeholder="Latitude")
       br
