@@ -8,7 +8,7 @@ block content
   //This page displays a single incident and allows you to update it's information.
   div.row
     div.col-md-12
-      iframe(width="560" height="315" src="https://youtube.com/embed/#{incident.video}" frameborder="0" allowfullscreen)#video
+      iframe(width="560" height="315" src="https://youtube.com/embed/#{incident.video}" frameborder="0" allowfullscreen)#youTube
       p.text-center #{incident.description}
   
   button(data-toggle="collapse" data-target="#form").btn.btn-default Update Information
@@ -41,7 +41,7 @@ block content
       p
         label Description
         br
-        input(type="text" value="#{incident.description}" name="description" id="description")
+        textarea(rows="5" cols="50" name="description" id="description") #{incident.description}
       p
         a(href="/incidents/delete/#{incident.city}") Delete This Incident
       
