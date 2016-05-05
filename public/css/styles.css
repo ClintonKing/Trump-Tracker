@@ -104,5 +104,14 @@ input{
   padding-left: 5px;
   margin-bottom: 5px;
   box-shadow: none;
-  border: 1px solid black;
+  border: 1px solid #ccc;
+}
+
+#addOne{
+  font-size: 1.7em;
+  font-weight: bold;
+}
+
+#form{
+  margin-top: 15px;
 }

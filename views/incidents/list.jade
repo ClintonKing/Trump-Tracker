@@ -10,16 +10,16 @@ block content
 	div.container
 		div.row
 			div#map
-		div.row
-			div.col-md-12
-				a(href="/incidents/form")#reporter.btn.btn-default Report an Incident
+		//- div.row
+		//- 	div.col-md-12
+		//- 		a(href="/incidents/form")#reporter.btn.btn-default Report an Incident
 	
 	//Let's setup our Leaflet map.
 	script.
 		var map = L.map('map').setView([39, -97], 4);
 		var options = {
 		minZoom: 4,
-		maxZoom: 6,
+		maxZoom: 4,
 		opacity: 1.0,
 		tms: false,
 		zIndex: 500,
@@ -39,5 +39,5 @@ block content
 	//For each incident in our database, lets place a marker at it's latlng and bind a popup with information pulled from the mongo document.
 	for incident in incidents
 		script.
-			var #{incident.name} = L.marker([#{incident.lat}, #{incident.long}], {icon: donHead}).addTo(map);
-			#{incident.name}.bindPopup("<a class='popupLink' href='/incidents/#{incident.name}'><p>#{incident.type} at rally in #{incident.location}</p> <br> <p>on #{incident.date}.</p><br><img src='#{incident.img}' class='popupImg' /></a>");
+			var #{incident.last} = L.marker([#{incident.lat}, #{incident.long}], {icon: donHead}).addTo(map);
+			#{incident.last}.bindPopup("<a class='popupLink' href='/incidents/#{incident.last}'><p>#{incident.type} at rally in #{incident.location}</p> <br> <p>on #{incident.date}.</p><br><img src='#{incident.img}' class='popupImg' /></a>");
