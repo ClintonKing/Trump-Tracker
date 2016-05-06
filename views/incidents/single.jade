@@ -10,14 +10,24 @@ block content
     $(document).ready(function(){
       document.getElementById("type").value = "#{incident.type}";
       document.getElementById("state").value = "#{incident.state}";
+      $("#updateBtn").click(function(){
+        $("html, body").animate({ scrollTop: $(document).height()}, "slow");
+      });
     });
   
   div.row
-    div.col-md-12
-      iframe(width="560" height="315" src="https://youtube.com/embed/#{incident.video}" frameborder="0" allowfullscreen)#youTube
-      p.text-center #{incident.description}
+    div.col-md-2
+    div.col-md-8
+      div#videoWrap
+        iframe(width="560" height="315" src="https://youtube.com/embed/#{incident.video}" frameborder="0" allowfullscreen)#youTube
+    div.col-md-2
+  div.row
+    div.col-md-2
+    div.col-md-8
+      p#descriptionText.text-center #{incident.description}
+    div.col-md-2
   
-  button(data-toggle="collapse" data-target="#form").btn.btn-default Update Information
+  button(data-toggle="collapse" data-target="#form")#updateBtn.btn.btn-default Update Information
   div#form.col-md-12.collapse
     form(action="/incidents/#{incident.city}" method="POST")
       p
