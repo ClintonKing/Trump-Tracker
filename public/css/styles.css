@@ -75,6 +75,12 @@ body{
 
 .leaflet-control-zoom{
   top: 75px;
+  border-radius: 0;
+}
+
+.leaflet-bar a:first-child,
+.leaflet-bar a:last-child{
+  border-radius: 0;
 }
 
 .leaflet-popup-content-wrapper{
@@ -108,11 +114,63 @@ body{
 
 .navbar{
   z-index: 1000;
+  border-radius: 0;
 }
 
 #addOne{
   font-size: 1.7em;
   font-weight: bold;
+}
+
+#infoBox{
+  background: #fff;
+  position: absolute;
+  top: 150px;
+  left: 10px;
+  z-index: 2;
+  max-width: 150px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+  padding: 10px 5px;
+}
+
+#infoHead{
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  width: 65px;
+  height: 80px;
+}
+
+#infoBox p{
+  line-height: 1.2em;
+  color: black;
+  border: 1px solid #777;
+  border-radius: 100px;
+  padding: 10px;
+}
+
+#infoBox p:before{
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 55px;
+  top: 96px;
+  border-width: 0 10px 10px;
+  border-style: solid;
+  border-color: black transparent;
+}
+
+#infoBox p:after{
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 56px;
+  top: 97px;
+  border-width: 0 9px 9px;
+  border-style: solid;
+  border-color: #fff transparent;
 }
 
 /*FORM PIECES*/
