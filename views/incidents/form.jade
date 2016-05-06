@@ -6,7 +6,7 @@ block title
 
 block content
   //This is the form for adding new documents to the database.
-  h1 New Recipe
+  h2 Report Incident of Violence
   form(action="/incidents" method="POST")
     p
       label Rally Location
@@ -25,8 +25,11 @@ block content
       label Incident Category
       br
       select(name="type")
-        option(value="Verbal Abuse") Verbal Abuse
-        option(value="Assault") Assault  
+        option(value="Verbal abuse") Verbal Abuse
+        option(value="Beating") Beating
+        option(value="Shoving") Shoving
+        option(value="Racial slurs") Racial Slurs 
+        option(value="Sucker-punch") Sucker-punch 
     p
       label YouTube Video ID
       br
@@ -36,4 +39,4 @@ block content
       br
       textarea(rows="4" cols="50" name="description")
     
-    button Submit Report
+    button.btn.btn-default Submit Report
